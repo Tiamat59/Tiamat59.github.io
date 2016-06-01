@@ -29,6 +29,12 @@ page '/*.txt', layout: false
 #   end
 # end
 
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.branch = 'master'
+  deploy.build_before = true
+end
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
